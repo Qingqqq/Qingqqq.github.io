@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>逻辑判断-翻译推理</title>
+      <link href="/2025/04/26/%E9%80%BB%E8%BE%91%E5%88%A4%E6%96%AD-%E7%BF%BB%E8%AF%91%E6%8E%A8%E7%90%86/"/>
+      <url>/2025/04/26/%E9%80%BB%E8%BE%91%E5%88%A4%E6%96%AD-%E7%BF%BB%E8%AF%91%E6%8E%A8%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h1 id="逻辑判断"><a href="#逻辑判断" class="headerlink" title="逻辑判断"></a>逻辑判断</h1><h2 id="翻译推理"><a href="#翻译推理" class="headerlink" title="翻译推理"></a>翻译推理</h2><h3 id="题型特征"><a href="#题型特征" class="headerlink" title="题型特征"></a>题型特征</h3><p>可以&#x2F;无法推出</p><p>逻辑关联词（如果……那么……等）</p><h3 id="解题思维"><a href="#解题思维" class="headerlink" title="解题思维"></a>解题思维</h3><p>先翻译，后推理</p><p>避免通过语义解题</p><h3 id="翻译规则"><a href="#翻译规则" class="headerlink" title="翻译规则"></a>翻译规则</h3><h4 id="前推后"><a href="#前推后" class="headerlink" title="前推后"></a>前推后</h4><p>如果……那么（就）……</p><p>只要……就……</p><p>所有……都……</p><p>……是……的充分条件</p><p>……就&#x2F;则&#x2F;都&#x2F;一定……</p><h4 id="后推前"><a href="#后推前" class="headerlink" title="后推前"></a>后推前</h4><p>只有……才……</p><p>不……不……</p><p>……才……</p><p>除非……否则不……</p><p>……是……必要条件</p><h4 id="易错点"><a href="#易错点" class="headerlink" title="易错点"></a>易错点</h4><p>谁是必要条件，谁放在箭头后</p><p>除非……&#x3D;除非……否则……</p><h3 id="推理规则"><a href="#推理规则" class="headerlink" title="推理规则"></a>推理规则</h3><h4 id="逆否等价"><a href="#逆否等价" class="headerlink" title="逆否等价"></a>逆否等价</h4><p>1-&gt;2&#x3D;否2-&gt;否1</p><h4 id="传递规则"><a href="#传递规则" class="headerlink" title="传递规则"></a>传递规则</h4><p>1-&gt;2，2-&gt;3&#x3D;1-&gt;3</p><h3 id="常规翻译"><a href="#常规翻译" class="headerlink" title="常规翻译"></a>常规翻译</h3><h4 id="”且“关系"><a href="#”且“关系" class="headerlink" title="”且“关系"></a>”且“关系</h4><p>并列关系：并且&#x2F;且&#x2F;都&#x2F;和&#x2F;即……又……</p><p>递进关系：甚至&#x2F;而且&#x2F;还</p><p>转折关系：但是&#x2F;然而&#x2F;却</p><p>标点符号：逗号，顿号，分号</p><p>1 且2-&gt;1，1 且2-&gt;2</p><h4 id="”或“关系"><a href="#”或“关系" class="headerlink" title="”或“关系"></a>”或“关系</h4><p>……或者&#x2F;或……</p><p>或者……或者……</p><p>……和……至少有一个</p><p>1或2成立时，否1-&gt;2,否2-&gt;1</p><h4 id="德摩根定律"><a href="#德摩根定律" class="headerlink" title="德摩根定律"></a>德摩根定律</h4><p>否（1且2）&#x3D;否1或否2</p><p>否（1或2）&#x3D;否1且否2</p><h3 id="集合推理"><a href="#集合推理" class="headerlink" title="集合推理"></a>集合推理</h3><h4 id="所有"><a href="#所有" class="headerlink" title="所有"></a>所有</h4><p>翻译规则：前推后</p><p>推理规则：逆否等价</p><h4 id="有的"><a href="#有的" class="headerlink" title="有的"></a>有的</h4><p>含义：至少有一个</p><p>翻译规则：</p><p>​有的1是2：1-&gt;2</p><p>​有的1不是2：1-&gt;否2</p><p>推理规则：</p><p>​带”有的“的翻译不适用逆否等价规则</p><p>​有的1是2&#x3D;有的2是1</p><p>​所有1都是2&#x3D;有的1是2</p><p>​所有1都是2&#x3D;有的2是1</p><h4 id="”并非“同义替换"><a href="#”并非“同义替换" class="headerlink" title="”并非“同义替换"></a>”并非“同义替换</h4><p>​去掉”并非”</p><p>​”必然“，”可能“互换</p><p>​”所有“，”有的“互换】</p><p>​否定谓语动词</p><p>​例：并非明天必然不下雨&#x3D;明天可能下雨</p><h3 id="推理形式"><a href="#推理形式" class="headerlink" title="推理形式"></a>推理形式</h3><h4 id="提问方式"><a href="#提问方式" class="headerlink" title="提问方式"></a>提问方式</h4><p>与题干推理结构&#x2F;推理形式&#x2F;论证方式相似</p><h4 id="解题思维-1"><a href="#解题思维-1" class="headerlink" title="解题思维"></a>解题思维</h4><p>逻辑一致是前提，句式相同优选。</p><p>不考虑推理是否正确，只考虑与题干是否一致。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 判断-逻辑判断-翻译推理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 判断 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>言语必刷100题（三）</title>
       <link href="/2025/04/25/%E8%A8%80%E8%AF%AD%E5%BF%85%E5%88%B7100%E9%A2%98%EF%BC%88%E4%B8%89%EF%BC%89/"/>
       <url>/2025/04/25/%E8%A8%80%E8%AF%AD%E5%BF%85%E5%88%B7100%E9%A2%98%EF%BC%88%E4%B8%89%EF%BC%89/</url>
