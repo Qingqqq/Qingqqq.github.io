@@ -1,0 +1,705 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>小记 | Qing'Blog</title><meta name="author" content="小鱼在山东"><meta name="copyright" content="小鱼在山东"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="计划、复盘、学习坑点、知识要点">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小记">
+<meta property="og:url" content="http://example.com/note/index.html">
+<meta property="og:site_name" content="Qing&#39;Blog">
+<meta property="og:description" content="计划、复盘、学习坑点、知识要点">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2025-05-11T07:25:01.000Z">
+<meta property="article:modified_time" content="2025-05-13T08:01:47.472Z">
+<meta property="article:author" content="小鱼在山东">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/note/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: 小鱼在山东","link":"链接: ","source":"来源: Qing'Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '小记',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/xingce/"><i class="fa-fw fas fa-folder-open"></i><span> 行测</span></a></div><div class="menus_item"><a class="site-page" href="/shenlun/"><i class="fa-fw fas fa-folder-open"></i><span> 申论</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-folder-open"></i><span> 技能</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/programming/"><i class="fa-fw fas fa-folder-open"></i><span> 编程</span></a></li><li><a class="site-page child" href="/CTF/"><i class="fa-fw fas fa-folder-open"></i><span> 网安</span></a></li><li><a class="site-page child" href="/AI/"><i class="fa-fw fas fa-folder-open"></i><span> AI</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-paper-plane"></i><span> 说说</span></a></li><li><a class="site-page child" href="/health/"><i class="fa-fw far fa-face-smile"></i><span> 健康</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源页</span></a></div><div class="menus_item"><a class="site-page" href="/note/"><i class="fa-fw fa-light fa-pencil"></i><span> 小记</span></a></div><div class="menus_item"><a class="site-page" href="/renew/"><i class="fa-fw fas fa-solid fa-bell"></i><span> 更新日志</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="page type-note" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/background.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Qing'Blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/xingce/"><i class="fa-fw fas fa-folder-open"></i><span> 行测</span></a></div><div class="menus_item"><a class="site-page" href="/shenlun/"><i class="fa-fw fas fa-folder-open"></i><span> 申论</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-folder-open"></i><span> 技能</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/programming/"><i class="fa-fw fas fa-folder-open"></i><span> 编程</span></a></li><li><a class="site-page child" href="/CTF/"><i class="fa-fw fas fa-folder-open"></i><span> 网安</span></a></li><li><a class="site-page child" href="/AI/"><i class="fa-fw fas fa-folder-open"></i><span> AI</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-paper-plane"></i><span> 说说</span></a></li><li><a class="site-page child" href="/health/"><i class="fa-fw far fa-face-smile"></i><span> 健康</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 资源页</span></a></div><div class="menus_item"><a class="site-page" href="/note/"><i class="fa-fw fa-light fa-pencil"></i><span> 小记</span></a></div><div class="menus_item"><a class="site-page" href="/renew/"><i class="fa-fw fas fa-solid fa-bell"></i><span> 更新日志</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">小记</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="25-5"><a href="#25-5" class="headerlink" title="25.5"></a>25.5</h1><ul>
+<li><input disabled="" type="checkbox"> 龙飞图推</li>
+<li><input disabled="" type="checkbox"> FB5000题</li>
+<li><input disabled="" type="checkbox"> 25国考省考真题分析（2周一份）</li>
+<li><input disabled="" type="checkbox"> FB模考＋复盘</li>
+<li><input disabled="" type="checkbox"> 言语必刷100题</li>
+<li><input disabled="" type="checkbox"> 申论，白L课程（一天一课）</li>
+<li><input disabled="" type="checkbox"> 小牛申论</li>
+<li><input disabled="" type="checkbox"> 晨读资料整理（抄写美文，每天）</li>
+<li><input disabled="" type="checkbox"> 基础知识整理（每天一小节） </li>
+<li><input disabled="" type="checkbox"> 超格课程</li>
+</ul>
+<h2 id="25-5-13"><a href="#25-5-13" class="headerlink" title="25.5.13"></a>25.5.13</h2><h3 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h3><ul>
+<li><input disabled="" type="checkbox"> 速算</li>
+<li><input disabled="" type="checkbox"> 5000题刷题言语</li>
+<li><input disabled="" type="checkbox"> 5000题刷题资料</li>
+<li><input disabled="" type="checkbox"> 5000题刷题判断</li>
+<li><input disabled="" type="checkbox"> 5000题刷题数量</li>
+<li><input disabled="" type="checkbox"> 龙飞图推</li>
+<li><input disabled="" type="checkbox"> FB复盘</li>
+<li><input disabled="" type="checkbox"> 白鹭回顾</li>
+<li><input disabled="" type="checkbox"> 晚课</li>
+<li><input checked="" disabled="" type="checkbox"> 超格课程</li>
+</ul>
+<h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><h4 id="至多-至少"><a href="#至多-至少" class="headerlink" title="至多&amp;至少"></a>至多&amp;至少</h4><p>AB至多	-A或-B</p>
+<p>AB至少	A或B</p>
+<p>ABC至多	-A-B-C或-A-BC或-AB-C或A-B-C</p>
+<h3 id="要点积累"><a href="#要点积累" class="headerlink" title="要点积累"></a>要点积累</h3><h4 id="积少成多"><a href="#积少成多" class="headerlink" title="积少成多"></a>积少成多</h4><p>集腋成裘</p>
+<p>聚沙成塔</p>
+<p>涓滴成河</p>
+<h4 id="平均数"><a href="#平均数" class="headerlink" title="平均数"></a>平均数</h4><p>平均数的增长率<img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121558951.png" alt="img"></p>
+<p>平均数的增长量<img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121605424.png" alt="img"></p>
+<h4 id="修辞手法"><a href="#修辞手法" class="headerlink" title="修辞手法"></a>修辞手法</h4><p>以下是更全面的<strong>修辞手法定义及示例</strong>整理，涵盖中文中常见的修辞技巧，供学习和参考：</p>
+<hr>
+<h5 id="1-比喻"><a href="#1-比喻" class="headerlink" title="1. 比喻"></a><strong>1. 比喻</strong></h5><ul>
+<li><strong>定义</strong>：通过相似性，用另一事物（喻体）描述本体。  <ul>
+<li><strong>明喻</strong>：直接使用“像、似、如”等喻词。<br><em>示例：她的眼睛像星星一样明亮。</em>  </li>
+<li><strong>暗喻（隐喻）</strong>：用“是、成为”等暗示比喻。<br><em>示例：时间是一条无声的河。</em>  </li>
+<li><strong>借喻</strong>：省略本体，直接用喻体代替。<br><em>示例：乱红飞过秋千去。（“乱红”代指落花）</em></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="2-拟人"><a href="#2-拟人" class="headerlink" title="2. 拟人"></a><strong>2. 拟人</strong></h5><ul>
+<li><strong>定义</strong>：赋予非人类事物以人的动作或情感。<br><em>示例：风儿轻轻抚摸着湖面，湖水泛起羞涩的涟漪。</em></li>
+</ul>
+<hr>
+<h5 id="3-夸张"><a href="#3-夸张" class="headerlink" title="3. 夸张"></a><strong>3. 夸张</strong></h5><ul>
+<li><strong>定义</strong>：夸大或缩小事实以突出特征。<br><em>示例：飞流直下三千尺，疑是银河落九天。（李白）</em></li>
+</ul>
+<hr>
+<h5 id="4-排比"><a href="#4-排比" class="headerlink" title="4. 排比"></a><strong>4. 排比</strong></h5><ul>
+<li><strong>定义</strong>：三个及以上结构相似、意义相关的句子并列。<br><em>示例：山朗润起来了，水涨起来了，太阳的脸红起来了。（朱自清）</em></li>
+</ul>
+<hr>
+<h5 id="5-对偶"><a href="#5-对偶" class="headerlink" title="5. 对偶"></a><strong>5. 对偶</strong></h5><ul>
+<li><strong>定义</strong>：字数、结构、词性对称的句子，增强节奏感。<br><em>示例：两个黄鹂鸣翠柳，一行白鹭上青天。（杜甫）</em></li>
+</ul>
+<hr>
+<h5 id="6-反复"><a href="#6-反复" class="headerlink" title="6. 反复"></a><strong>6. 反复</strong></h5><ul>
+<li><strong>定义</strong>：重复词语或句子以强化情感。<br><em>示例：盼望着，盼望着，东风来了，春天的脚步近了。（朱自清）</em></li>
+</ul>
+<hr>
+<h5 id="7-反问（激问）"><a href="#7-反问（激问）" class="headerlink" title="7. 反问（激问）"></a><strong>7. 反问（激问）</strong></h5><ul>
+<li><strong>定义</strong>：用疑问形式表达确定答案，无需回答。<br><em>示例：谁不知道这是你的功劳？</em></li>
+</ul>
+<hr>
+<h5 id="8-设问"><a href="#8-设问" class="headerlink" title="8. 设问"></a><strong>8. 设问</strong></h5><ul>
+<li><strong>定义</strong>：自问自答，引发思考。<br><em>示例：什么是路？就是从没路的地方践踏出来的。（鲁迅）</em></li>
+</ul>
+<hr>
+<h5 id="9-借代"><a href="#9-借代" class="headerlink" title="9. 借代"></a><strong>9. 借代</strong></h5><ul>
+<li><strong>定义</strong>：用相关联的事物代替本体。<br><em>示例：何以解忧？唯有杜康。（“杜康”代指酒）</em></li>
+</ul>
+<hr>
+<h5 id="10-反语"><a href="#10-反语" class="headerlink" title="10. 反语"></a><strong>10. 反语</strong></h5><ul>
+<li><strong>定义</strong>：正话反说，表达讽刺或幽默。<br><em>示例：你可真是个大善人，连乞丐的钱都拿！</em></li>
+</ul>
+<hr>
+<h5 id="11-双关"><a href="#11-双关" class="headerlink" title="11. 双关"></a><strong>11. 双关</strong></h5><ul>
+<li><strong>定义</strong>：利用谐音或多义词制造双重含义。  <ul>
+<li><strong>谐音双关</strong>：<em>示例：春蚕到死丝方尽。（“丝”谐音“思”）</em>  </li>
+<li><strong>语义双关</strong>：<em>示例：我失骄杨君失柳。（“杨”“柳”既指植物，又指杨开慧、柳直荀烈士）</em></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="12-通感（移觉）"><a href="#12-通感（移觉）" class="headerlink" title="12. 通感（移觉）"></a><strong>12. 通感（移觉）</strong></h5><ul>
+<li><strong>定义</strong>：将不同感官体验相互联通。<br><em>示例：微风过处，送来缕缕清香，仿佛远处高楼上渺茫的歌声似的。（朱自清，嗅觉→听觉）</em></li>
+</ul>
+<hr>
+<h5 id="13-引用"><a href="#13-引用" class="headerlink" title="13. 引用"></a><strong>13. 引用</strong></h5><ul>
+<li><strong>定义</strong>：引用经典语句、典故增强说服力。<br><em>示例：古人云：“读万卷书，行万里路。”</em></li>
+</ul>
+<hr>
+<h5 id="14-对比"><a href="#14-对比" class="headerlink" title="14. 对比"></a><strong>14. 对比</strong></h5><ul>
+<li><strong>定义</strong>：将对立事物并列，突出差异。<br><em>示例：有的人活着，他已经死了；有的人死了，他还活着。（臧克家）</em></li>
+</ul>
+<hr>
+<h5 id="15-顶真（联珠）"><a href="#15-顶真（联珠）" class="headerlink" title="15. 顶真（联珠）"></a><strong>15. 顶真（联珠）</strong></h5><ul>
+<li><strong>定义</strong>：前句结尾作后句开头，形成连贯效果。<br><em>示例：军书十二卷，卷卷有爷名。（《木兰诗》）</em></li>
+</ul>
+<hr>
+<h5 id="16-拈连"><a href="#16-拈连" class="headerlink" title="16. 拈连"></a><strong>16. 拈连</strong></h5><ul>
+<li><strong>定义</strong>：将适用于A事物的词语顺势用于B事物。<br><em>示例：线儿缝在军衣上，情意缝进我心里。</em></li>
+</ul>
+<hr>
+<h5 id="17-仿词"><a href="#17-仿词" class="headerlink" title="17. 仿词"></a><strong>17. 仿词</strong></h5><ul>
+<li><strong>定义</strong>：仿照已有词语创造新词，制造幽默或讽刺。<br><em>示例：大众虽然智识没有读书人的高，但他们对于胡说的人们，却有一个谥法：绣花枕头。（鲁迅仿“绣花枕头一包草”）</em></li>
+</ul>
+<hr>
+<h5 id="18-回环（回文）"><a href="#18-回环（回文）" class="headerlink" title="18. 回环（回文）"></a><strong>18. 回环（回文）</strong></h5><ul>
+<li><strong>定义</strong>：前后句首尾循环，形成回环往复。<br><em>示例：理性出真理，真理出理性。</em></li>
+</ul>
+<hr>
+<h5 id="19-互文"><a href="#19-互文" class="headerlink" title="19. 互文"></a><strong>19. 互文</strong></h5><ul>
+<li><strong>定义</strong>：上下文互相呼应，合而见义。<br><em>示例：将军百战死，壮士十年归。（《木兰诗》，“将军”与“壮士”互文）</em></li>
+</ul>
+<hr>
+<h5 id="20-层递"><a href="#20-层递" class="headerlink" title="20. 层递"></a><strong>20. 层递</strong></h5><ul>
+<li><strong>定义</strong>：按程度递进或递减排列内容。<br><em>示例：一屋不扫，何以扫天下？</em></li>
+</ul>
+<hr>
+<h5 id="21-倒装"><a href="#21-倒装" class="headerlink" title="21. 倒装"></a><strong>21. 倒装</strong></h5><ul>
+<li><strong>定义</strong>：颠倒正常语序以强调特定内容。<br><em>示例：轻轻的我走了，正如我轻轻的来。（徐志摩）</em></li>
+</ul>
+<hr>
+<h5 id="22-呼告"><a href="#22-呼告" class="headerlink" title="22. 呼告"></a><strong>22. 呼告</strong></h5><ul>
+<li><strong>定义</strong>：直接呼唤不在场的人或物。<br><em>示例：天啊！为什么这样对待我？</em></li>
+</ul>
+<hr>
+<h5 id="23-移就（移情）"><a href="#23-移就（移情）" class="headerlink" title="23. 移就（移情）"></a><strong>23. 移就（移情）</strong></h5><ul>
+<li><strong>定义</strong>：将形容A的词语移用于B。<br><em>示例：他熬过了无数个寂寞的长夜。（“寂寞”本应形容人，移用于“长夜”）</em></li>
+</ul>
+<hr>
+<h5 id="24-婉曲（委婉）"><a href="#24-婉曲（委婉）" class="headerlink" title="24. 婉曲（委婉）"></a><strong>24. 婉曲（委婉）</strong></h5><ul>
+<li><strong>定义</strong>：含蓄表达不便直说的事物。<br><em>示例：他已永远闭上了眼睛。（代替“去世”）</em></li>
+</ul>
+<hr>
+<h5 id="25-飞白"><a href="#25-飞白" class="headerlink" title="25. 飞白"></a><strong>25. 飞白</strong></h5><ul>
+<li><strong>定义</strong>：故意模仿错误语言（如口误、笔误）制造真实感。<br><em>示例：林黛玉道：“宝玉，我问你：至贵者宝，至坚者玉。尔有何贵？尔有何坚？”（《红楼梦》，模仿孩童稚语）</em></li>
+</ul>
+<hr>
+<h5 id="26-列锦"><a href="#26-列锦" class="headerlink" title="26. 列锦"></a><strong>26. 列锦</strong></h5><ul>
+<li><strong>定义</strong>：用名词或名词性短语组合画面。<br><em>示例：枯藤老树昏鸦，小桥流水人家。（马致远）</em></li>
+</ul>
+<hr>
+<h5 id="27-反讽"><a href="#27-反讽" class="headerlink" title="27. 反讽"></a><strong>27. 反讽</strong></h5><ul>
+<li><strong>定义</strong>：表面赞美实则讽刺。<br><em>示例：你真聪明，连1+1都能算错！</em></li>
+</ul>
+<hr>
+<h5 id="28-示现"><a href="#28-示现" class="headerlink" title="28. 示现"></a><strong>28. 示现</strong></h5><ul>
+<li><strong>定义</strong>：将想象或回忆中的场景描绘得如现眼前。<br><em>示例：遥想公瑾当年，小乔初嫁了，雄姿英发。（苏轼《念奴娇》）</em></li>
+</ul>
+<hr>
+<h5 id="29-摹状"><a href="#29-摹状" class="headerlink" title="29. 摹状"></a><strong>29. 摹状</strong></h5><ul>
+<li><strong>定义</strong>：模仿声音、形状或颜色。<br><em>示例：蜜蜂嗡嗡地闹着，野花散在草丛里，像眼睛，像星星。（朱自清）</em></li>
+</ul>
+<hr>
+<h5 id="30-歇后"><a href="#30-歇后" class="headerlink" title="30. 歇后"></a><strong>30. 歇后</strong></h5><ul>
+<li><strong>定义</strong>：由“引子+解释”组成，后半句省略，留白让人联想。<br><em>示例：泥菩萨过江——自身难保。</em></li>
+</ul>
+<hr>
+<h5 id="其他补充"><a href="#其他补充" class="headerlink" title="其他补充"></a><strong>其他补充</strong></h5><ul>
+<li><strong>析字</strong>：拆解字形表达新意（如“鸿是江边鸟，蚕为天下虫”）。  </li>
+<li><strong>复沓</strong>：重复句式或段落（如《诗经》中的重章叠句）。  </li>
+<li><strong>跳脱</strong>：故意中断语句，制造悬念（如“这件事其实……算了，不说了”）。</li>
+</ul>
+<hr>
+<h5 id="应用原则"><a href="#应用原则" class="headerlink" title="应用原则"></a><strong>应用原则</strong></h5><ol>
+<li><strong>贴合语境</strong>：避免生硬堆砌，需自然服务于内容。  </li>
+<li><strong>适度使用</strong>：过多修辞可能掩盖核心思想。  </li>
+<li><strong>创新表达</strong>：传统手法可结合现代语言焕发新意（如网络流行语中的双关）。</li>
+</ol>
+<p>通过灵活运用这些手法，语言表达会更生动、深刻且富有感染力。</p>
+<h4 id="语素、词素"><a href="#语素、词素" class="headerlink" title="语素、词素"></a><strong>语素、词素</strong></h4><p><strong>语素</strong>（英语：morpheme）[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AA%9E%E7%B4%A0#cite_note-:0-1">1]</a>或<strong>词素</strong>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AA%9E%E7%B4%A0#cite_note-2">2]</a>，又称<strong>形态素</strong>、<strong>义基</strong>，可定义为语言中最小的有意义单位，[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AA%9E%E7%B4%A0#cite_note-FOOTNOTE%E5%85%83%E4%BB%BB197979-3">3]</a>或者说语言中最小的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AF%AD%E9%9F%B3">语音</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AF%AD%E4%B9%89">语义</a>结合体（声音和意思的结合体），[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AA%9E%E7%B4%A0#cite_note-FOOTNOTE%E9%BB%84%E5%BB%962017201-4">4]</a>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AA%9E%E7%B4%A0#cite_note-FOOTNOTE%E5%88%98%E5%BA%9E1999-5">5]</a>这种定义在汉语中最为常见；也可定义为语言中最小的有意义或语法功能的单位。</p>
+<h4 id="专业名词"><a href="#专业名词" class="headerlink" title="专业名词"></a>专业名词</h4><h5 id="GEP-（生态系统生产总值）"><a href="#GEP-（生态系统生产总值）" class="headerlink" title="GEP**（生态系统生产总值）**"></a>GEP**（生态系统生产总值）**</h5><p><strong>定义</strong>：GEP（Gross Ecosystem Product）是以货币形式量化评估生态系统为人类福祉提供的产品和服务总值的指标，包括 <strong>物质产品</strong>（如农产品、水资源）、<strong>调节服务</strong>（如固碳释氧、水土保持）、<strong>文化服务</strong>（如生态旅游、景观价值）三大类。<br><strong>政策意义</strong>：</p>
+<ul>
+<li><strong>对标GDP</strong>：将生态保护成效转化为经济价值，为“绿水青山就是金山银山”提供量化依据。</li>
+<li><strong>实践案例</strong>：浙江丽水市率先发布GEP核算标准，将生态资源纳入政府考核，推动生态补偿、碳汇交易等机制落地。</li>
+</ul>
+<h5 id="生态产品和经济发展、金融产业、碳汇之间的关系"><a href="#生态产品和经济发展、金融产业、碳汇之间的关系" class="headerlink" title="生态产品和经济发展、金融产业、碳汇之间的关系"></a>生态产品和经济发展、金融产业、碳汇之间的关系</h5><p><strong>（1）生态产品与经济发展</strong></p>
+<ul>
+<li><strong>价值转化</strong>：通过生态产业化（如有机农业、生态旅游）和产业生态化（如绿色制造），将生态优势转化为经济优势。</li>
+<li><strong>案例</strong>：贵州赤水竹产业链，依托竹林资源发展竹编、竹炭等产业，实现生态保护与农民增收双赢。</li>
+</ul>
+<p><strong>（2）生态产品与金融产业</strong></p>
+<ul>
+<li><strong>绿色金融工具</strong>：开发“生态贷”“碳汇贷”等产品，以生态资源收益权为抵押物融资。</li>
+<li><strong>案例</strong>：福建三明市推出“林票制”，将林地经营权转化为可交易、可质押的金融凭证，盘活林业资源。</li>
+</ul>
+<p><strong>（3）生态产品与碳汇</strong></p>
+<ul>
+<li><strong>碳汇交易</strong>：森林、湿地等生态系统的固碳能力被纳入碳市场，形成“碳汇经济”。</li>
+<li><strong>政策链接</strong>：2021年全国碳市场启动，林业碳汇（CCER）可抵销企业碳排放配额，推动生态资源资本化。</li>
+</ul>
+<h5 id="公共生态产品的供给主体和市场交易化主体"><a href="#公共生态产品的供给主体和市场交易化主体" class="headerlink" title="公共生态产品的供给主体和市场交易化主体"></a>公共生态产品的供给主体和市场交易化主体</h5><p><strong>（1）公共生态产品供给主体</strong></p>
+<ul>
+<li><strong>政府主导</strong>：如国家公园、湿地保护区的建设，通过财政投入保障生态安全（如三江源生态修复工程）。</li>
+<li><strong>社会参与</strong>：公益组织、企业通过“认养湿地”“公益林捐赠”等方式补充供给（如蚂蚁森林项目）。</li>
+</ul>
+<p><strong>（2）市场交易化主体</strong></p>
+<ul>
+<li><strong>企业主体</strong>：通过市场化机制开发经营性生态产品（如生态旅游公司运营景区）。</li>
+<li><strong>交易平台</strong>：依托产权交易所、碳交易中心实现生态产品定价与流转（如福建南平“生态银行”模式）。</li>
+</ul>
+<p><strong>政策创新</strong>：政府通过PPP模式引入社会资本，或建立“使用者付费”机制（如排污权交易），破解公共生态产品融资难题。</p>
+<h5 id="调节服务类和文化服务类生态产品经营权质押担保"><a href="#调节服务类和文化服务类生态产品经营权质押担保" class="headerlink" title="调节服务类和文化服务类生态产品经营权质押担保"></a>调节服务类和文化服务类生态产品经营权质押担保</h5><p><strong>（1）调节服务类生态产品</strong></p>
+<ul>
+<li><strong>定义</strong>：如森林固碳、水源涵养等改善环境质量的服务。</li>
+<li><strong>质押方式</strong>：以未来碳汇收益权、水权等为标的物进行担保融资。</li>
+<li><strong>案例</strong>：云南普洱市以茶树碳汇收益权质押，获得银行贷款用于茶园生态改造。</li>
+</ul>
+<p><strong>（2）文化服务类生态产品</strong></p>
+<ul>
+<li><strong>定义</strong>：如自然景观、民俗文化等提供精神享受的服务。</li>
+<li><strong>质押方式</strong>：以景区经营权、文化IP使用权等作为抵押物。</li>
+<li><strong>案例</strong>：安徽黄山景区以门票收益权质押融资，用于旅游设施升级。</li>
+</ul>
+<p><strong>政策支持</strong>：</p>
+<ul>
+<li>《关于建立健全生态产品价值实现机制的意见》明确“探索生态资源权益交易与质押融资”。</li>
+<li>金融机构创新“生态抵质押品”评估体系，结合遥感技术、区块链确保权属清晰与价值可信。</li>
+</ul>
+<h4 id="中华人民共和国国务院组成部门及职能单位"><a href="#中华人民共和国国务院组成部门及职能单位" class="headerlink" title="中华人民共和国国务院组成部门及职能单位"></a>中华人民共和国国务院组成部门及职能单位</h4><h5 id="一、国务院组成部门（26个）"><a href="#一、国务院组成部门（26个）" class="headerlink" title="一、国务院组成部门（26个）"></a>一、国务院组成部门（26个）</h5><p>依据《宪法》第八十六条，组成部门由总理提名、全国人大决定，代表国家行使行政管理权，具有 <strong>行政决策与执法主体资格</strong>。</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>部门名称</strong></th>
+<th align="left"><strong>核心职能</strong></th>
+<th align="left"><strong>典型下属机构&#x2F;特色职能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>外交部</strong></td>
+<td align="left">对外关系、国际条约谈判、领事保护</td>
+<td align="left">地区业务司（如非洲司）、领事保护中心</td>
+</tr>
+<tr>
+<td align="left"><strong>国防部</strong></td>
+<td align="left">国防建设、兵役管理、国际军事交流</td>
+<td align="left">国防动员局、军事新闻局</td>
+</tr>
+<tr>
+<td align="left"><strong>国家发展和改革委员会</strong></td>
+<td align="left">宏观经济调控、重大战略规划（如“十四五”规划）</td>
+<td align="left">区域协调发展司、创新驱动发展中心</td>
+</tr>
+<tr>
+<td align="left"><strong>教育部</strong></td>
+<td align="left">教育政策制定、教育资源分配</td>
+<td align="left">基础教育司、学位管理与研究生教育司</td>
+</tr>
+<tr>
+<td align="left"><strong>科学技术部</strong></td>
+<td align="left">国家科技战略、重大专项攻关（2023年重组后强化战略规划职能）</td>
+<td align="left">高新技术司、科技监督与诚信建设司</td>
+</tr>
+<tr>
+<td align="left"><strong>工业和信息化部</strong></td>
+<td align="left">制造业转型升级、数字经济（如5G、工业互联网）</td>
+<td align="left">信息通信管理局、中小企业局</td>
+</tr>
+<tr>
+<td align="left"><strong>国家民族事务委员会</strong></td>
+<td align="left">民族政策落实、民族团结进步创建</td>
+<td align="left">民族团结促进司、少数民族语言文字研究室</td>
+</tr>
+<tr>
+<td align="left"><strong>公安部</strong></td>
+<td align="left">社会治安管理、反恐维稳、出入境管理</td>
+<td align="left">刑事侦查局、网络安全保卫局</td>
+</tr>
+<tr>
+<td align="left"><strong>民政部</strong></td>
+<td align="left">基层治理、社会组织监管、社会福利（如养老服务）</td>
+<td align="left">社会救助司、区划地名司</td>
+</tr>
+<tr>
+<td align="left"><strong>司法部</strong></td>
+<td align="left">法治政府建设、监狱管理、普法宣传</td>
+<td align="left">立法一局（负责民事立法）、社区矫正管理局</td>
+</tr>
+<tr>
+<td align="left"><strong>财政部</strong></td>
+<td align="left">财政政策制定、预算管理、税收制度改革</td>
+<td align="left">国库司、政府债务研究和评估中心</td>
+</tr>
+<tr>
+<td align="left"><strong>人力资源和社会保障部</strong></td>
+<td align="left">就业促进、社会保障（如养老保险全国统筹）</td>
+<td align="left">职业能力建设司、农民工工作司</td>
+</tr>
+<tr>
+<td align="left"><strong>自然资源部</strong></td>
+<td align="left">国土空间规划、自然资源确权登记</td>
+<td align="left">国土空间用途管制司、国家海洋信息中心</td>
+</tr>
+<tr>
+<td align="left"><strong>生态环境部</strong></td>
+<td align="left">污染防治攻坚战、碳达峰碳中和行动</td>
+<td align="left">大气环境司、气候变化事务办公室</td>
+</tr>
+<tr>
+<td align="left"><strong>住房和城乡建设部</strong></td>
+<td align="left">房地产市场调控、城市更新、老旧小区改造</td>
+<td align="left">城市建设司、建筑市场监管司</td>
+</tr>
+<tr>
+<td align="left"><strong>交通运输部</strong></td>
+<td align="left">综合交通体系建设（如“八纵八横”高铁网）</td>
+<td align="left">公路局、海事局</td>
+</tr>
+<tr>
+<td align="left"><strong>水利部</strong></td>
+<td align="left">水资源管理、重大水利工程（如南水北调）</td>
+<td align="left">三峡工程管理司、农村水利水电司</td>
+</tr>
+<tr>
+<td align="left"><strong>农业农村部</strong></td>
+<td align="left">乡村振兴战略实施、粮食安全（如高标准农田建设）</td>
+<td align="left">种业管理司、长江流域渔政监督管理办公室</td>
+</tr>
+<tr>
+<td align="left"><strong>商务部</strong></td>
+<td align="left">内外贸一体化、自贸试验区建设</td>
+<td align="left">电子商务司、国际贸易谈判代表办公室</td>
+</tr>
+<tr>
+<td align="left"><strong>文化和旅游部</strong></td>
+<td align="left">文化遗产保护、文旅融合发展（如国家文化公园建设）</td>
+<td align="left">非物质文化遗产司、资源开发司</td>
+</tr>
+<tr>
+<td align="left"><strong>国家卫生健康委员会</strong></td>
+<td align="left">公共卫生应急管理、医药卫生体制改革</td>
+<td align="left">疾病预防控制局、老龄健康司</td>
+</tr>
+<tr>
+<td align="left"><strong>退役军人事务部</strong></td>
+<td align="left">退役军人安置、优抚优待政策</td>
+<td align="left">拥军优抚司、退役军人培训中心</td>
+</tr>
+<tr>
+<td align="left"><strong>应急管理部</strong></td>
+<td align="left">灾害应急救援、安全生产监管（如危化品专项整治）</td>
+<td align="left">森林消防局、防汛抗旱司</td>
+</tr>
+<tr>
+<td align="left"><strong>中国人民银行</strong></td>
+<td align="left">货币政策制定、金融稳定（如防范系统性金融风险）</td>
+<td align="left">货币政策司、金融稳定局</td>
+</tr>
+<tr>
+<td align="left"><strong>审计署</strong></td>
+<td align="left">国家财政收支审计、领导干部经济责任审计</td>
+<td align="left">税收征管审计司、社会保障审计司</td>
+</tr>
+</tbody></table>
+<hr>
+<h5 id="二、国务院直属机构（10个）"><a href="#二、国务院直属机构（10个）" class="headerlink" title="二、国务院直属机构（10个）"></a>二、国务院直属机构（10个）</h5><p>直属国务院领导，主管特定业务，具有 <strong>独立行政职权</strong>，但行政层级低于组成部门。</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>机构名称</strong></th>
+<th align="left"><strong>核心职能</strong></th>
+<th align="left"><strong>特色职能案例</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>海关总署</strong></td>
+<td align="left">进出口监管、关税征收</td>
+<td align="left">跨境电商B2B出口监管试点</td>
+</tr>
+<tr>
+<td align="left"><strong>国家税务总局</strong></td>
+<td align="left">税收征管、税费优惠政策落实（如留抵退税）</td>
+<td align="left">智慧税务建设（“金税四期”系统）</td>
+</tr>
+<tr>
+<td align="left"><strong>国家市场监督管理总局</strong></td>
+<td align="left">反垄断执法、食品药品安全监管（如“铁拳”行动）</td>
+<td align="left">国家企业信用信息公示系统</td>
+</tr>
+<tr>
+<td align="left"><strong>国家金融监督管理总局</strong></td>
+<td align="left">银行业保险业监管、金融消费者保护（2023年机构改革新设）</td>
+<td align="left">中小银行风险化解专项工作</td>
+</tr>
+<tr>
+<td align="left"><strong>中国证券监督管理委员会</strong></td>
+<td align="left">资本市场改革（如全面注册制）、上市公司监管</td>
+<td align="left">北交所设立与创新型中小企业融资支持</td>
+</tr>
+<tr>
+<td align="left"><strong>国家广播电视总局</strong></td>
+<td align="left">广播电视内容审核、媒体融合发展</td>
+<td align="left">网络视听节目管理（如短视频平台治理）</td>
+</tr>
+<tr>
+<td align="left"><strong>国家体育总局</strong></td>
+<td align="left">全民健身计划、竞技体育发展（如巴黎奥运会备战）</td>
+<td align="left">冰雪运动“南展西扩东进”战略</td>
+</tr>
+<tr>
+<td align="left"><strong>国家国际发展合作署</strong></td>
+<td align="left">对外援助统筹（如疫苗援助、一带一路项目）</td>
+<td align="left">南南合作援助基金项目管理</td>
+</tr>
+<tr>
+<td align="left"><strong>国家医疗保障局</strong></td>
+<td align="left">医保基金监管、药品耗材集中采购（如心脏支架集采）</td>
+<td align="left">DRG&#x2F;DIP支付方式改革试点</td>
+</tr>
+<tr>
+<td align="left"><strong>国家信访局</strong></td>
+<td align="left">信访事项受理与督办、社会矛盾源头预防</td>
+<td align="left">全国信访信息系统智能化升级</td>
+</tr>
+</tbody></table>
+<hr>
+<h5 id="三、国务院办事机构与直属事业单位"><a href="#三、国务院办事机构与直属事业单位" class="headerlink" title="三、国务院办事机构与直属事业单位"></a>三、国务院办事机构与直属事业单位</h5><h6 id="（1）办事机构（2个）"><a href="#（1）办事机构（2个）" class="headerlink" title="（1）办事机构（2个）"></a>（1）办事机构（2个）</h6><p>协助总理办理专门事项，无独立行政管理权：</p>
+<ul>
+<li><strong>国务院研究室</strong>：政策调研与文件起草（如《政府工作报告》）</li>
+<li><strong>国务院港澳事务办公室</strong>：港澳政策协调（如完善选举制度立法）</li>
+</ul>
+<h6 id="（2）直属事业单位（9个）"><a href="#（2）直属事业单位（9个）" class="headerlink" title="（2）直属事业单位（9个）"></a>（2）直属事业单位（9个）</h6><p>承担公共服务或技术支持职能：</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>单位名称</strong></th>
+<th align="left"><strong>核心职能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">新华社</td>
+<td align="left">国家通讯社，权威信息发布（如党的二十大报道）</td>
+</tr>
+<tr>
+<td align="left">中国科学院</td>
+<td align="left">基础科学研究（如量子计算机研发）</td>
+</tr>
+<tr>
+<td align="left">中国工程院</td>
+<td align="left">工程科技战略咨询（如碳中和路径研究）</td>
+</tr>
+<tr>
+<td align="left">国务院发展研究中心</td>
+<td align="left">政策研究（如“双循环”新发展格局论证）</td>
+</tr>
+</tbody></table>
+<hr>
+<h5 id="四、部门协同机制"><a href="#四、部门协同机制" class="headerlink" title="四、部门协同机制"></a>四、部门协同机制</h5><ol>
+<li><strong>部际联席会议</strong>：<ul>
+<li><strong>国务院扶贫开发领导小组</strong>（现转型为乡村振兴局统筹）</li>
+<li><strong>国家应对气候变化及节能减排工作领导小组</strong>（跨部门协调碳达峰行动）</li>
+</ul>
+</li>
+<li><strong>专项办公室</strong>：<ul>
+<li><strong>国务院联防联控机制</strong>（卫健委牵头，多部门参与疫情防控）</li>
+</ul>
+</li>
+<li><strong>区域协调机构</strong>：<ul>
+<li><strong>京津冀协同发展领导小组办公室</strong>（发改委统筹三地交通、生态规划）</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h5 id="五、机构改革新动向（2023年）"><a href="#五、机构改革新动向（2023年）" class="headerlink" title="五、机构改革新动向（2023年）"></a>五、机构改革新动向（2023年）</h5><ol>
+<li><strong>科技体制改革</strong>：重组科学技术部，剥离具体项目评审职能，聚焦战略规划；</li>
+<li><strong>金融监管升级</strong>：组建国家金融监督管理总局，统一负责除证券业外的金融监管；</li>
+<li><strong>数据要素整合</strong>：成立国家数据局（隶属发改委），统筹数据资源管理与数字化建设。</li>
+</ol>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>国务院部门设置体现 <strong>“优化协同高效”</strong> 原则：</p>
+<ul>
+<li><strong>政治逻辑</strong>：党对重大工作的领导（如中央金融委员会指导金融监管总局）；</li>
+<li><strong>职能逻辑</strong>：从“行业管理”转向“功能监管”（如金融监管穿透式管理）；</li>
+<li><strong>实践逻辑</strong>：回应社会关切（市监总局强化反垄断、医保局打击骗保）。<br>此框架为公务员理解政府运行机制、分析政策执行路径提供系统性视角。</li>
+</ul>
+<h3 id="复盘"><a href="#复盘" class="headerlink" title="复盘"></a>复盘</h3><h3 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h3><h2 id="25-5-12之前"><a href="#25-5-12之前" class="headerlink" title="25.5.12之前"></a>25.5.12之前</h2><h3 id="要点积累-1"><a href="#要点积累-1" class="headerlink" title="要点积累"></a>要点积累</h3><p>兔死狐悲	为同类的不幸感到悲伤</p>
+<p>嗤之以鼻	轻蔑！！注意不是厌恶</p>
+<p>姚明：中国：篮球	瓦尔德内尔：瑞典：乒乓球</p>
+<h3 id="坑-1"><a href="#坑-1" class="headerlink" title="坑"></a>坑</h3><h4 id="中心对称VS中心轴对称图形"><a href="#中心对称VS中心轴对称图形" class="headerlink" title="中心对称VS中心轴对称图形"></a>中心对称VS中心轴对称图形</h4><p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121423370.png" alt="image-20250507091627074"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121423418.png" alt="image-20250507091844462"></p>
+<p>啥也不是</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121423470.png" alt="image-20250507232249989"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121423521.png" alt="image-20250507232252288"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121423568.png" alt="image-20250507232300727"></p>
+<p>因果类的文段，因为种种原因(待遇差，工作量大，学生轻视等)，所以教师队伍人才流失。结论，所以后面是重点。所以选b</p>
+<p>问题描述加对策，但是对策描述不全，优先选问题描述</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121423612.png" alt="image-20250430231225657"></p>
+<ul>
+<li>翻译推理</li>
+</ul>
+<p>A-&gt;B,B-&gt;C,则A-&gt;C	找相同逻辑</p>
+<p>错误A&gt;B,B&gt;C,则A&gt;C(A身高&gt;B,B身高&gt;C,则A身高&gt;C)</p>
+<ul>
+<li>加强逻辑</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121423649.png" alt="image-20250429230435744"></p>
+<p>D海产品过于少，范围宽泛</p>
+<p>C更结合论据</p>
+<ul>
+<li>资料——一般增长量问题（FB1.1.6）</li>
+</ul>
+<p>2020年2—7月全国多地实施阶段性减半征收职工医保单位缴费，累计减征约1649亿元，全年职工医保基金(含生育保险)收入15732亿元，比上年减少0.7%；</p>
+<p>3.若2—7月未实施阶段性减半征收职工医保单位缴费，则2020年职工医保基金(含生育保险)总收入同比增长：</p>
+<p>A.4%              B.7%</p>
+<p>C.10%            D.13%</p>
+<p>答案C</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121423685.png" alt="image-20250429232523428"></p>
+<ul>
+<li>存疑——资料——题目特殊定义&amp;&amp;现期平均数（FB1.1.7）</li>
+</ul>
+<p><img src="/25%E8%AE%A1%E5%88%92%E5%A4%8D%E7%9B%98.assets/image-20250429232657281.png" alt="image-20250429232657281"></p>
+<h3 id="记"><a href="#记" class="headerlink" title="记"></a>记</h3><p><strong>教唆、帮助侵权责任</strong></p>
+<p>以其不知道且不应当知道</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121423720.png" alt="image-20250430085638847"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121423753.png" alt="image-20250430231002121"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505121423792.png" alt="image-20250430231015180"></p>
+<h1 id="学习计划"><a href="#学习计划" class="headerlink" title="学习计划"></a>学习计划</h1><p>公考</p>
+<p>资料20道题25分钟<br>判断35道题30分钟<br>言语30道题25分钟<br>数量10道题15分钟<br>政治理论20道题10分钟<br>常识15道题8分钟<br>涂卡7分钟</p>
+<p><img src="/25%E8%AE%A1%E5%88%92%E5%A4%8D%E7%9B%98.assets/image-20250501224231001.png" alt="image-20250501224231001"></p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">小鱼在山东</div><div class="author-info-description">考编 考公 减肥 编程 网安 AI</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://www.xiaohongshu.com/user/profile/5f450949000000000101ea95?xsec_token=ABYhzlpjr0jxlkfoebejjHHo7NI2hZ-Yf8AJ6wJE5EB9Q%3D&amp;xsec_source=pc_search"><i class="far fa-comment"></i><span>我的小红书</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">学习资料获取<br>入群打卡学习 <br> 公考督学<br>1对1规划辅导<br>请联系我 <img src="/img/weixinid.png" style="width:100%; float:left; margin-right:10px;"></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/05/07/%E5%B8%B8%E8%AF%86-%E6%B3%95%E5%BE%8B-%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E6%99%AE%E5%8F%8A%E6%B3%95-%E8%83%BD%E6%BA%90%E6%B3%95/" title="常识-法律-科学技术普及法&amp;能源法"><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202504210834163.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="常识-法律-科学技术普及法&amp;能源法"/></a><div class="content"><a class="title" href="/2025/05/07/%E5%B8%B8%E8%AF%86-%E6%B3%95%E5%BE%8B-%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E6%99%AE%E5%8F%8A%E6%B3%95-%E8%83%BD%E6%BA%90%E6%B3%95/" title="常识-法律-科学技术普及法&amp;能源法">常识-法律-科学技术普及法&amp;能源法</a><time datetime="2025-05-07T15:04:18.000Z" title="发表于 2025-05-07 23:04:18">2025-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/06/%E8%A8%80%E8%AF%AD/" title="言语"><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202504210807593.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="言语"/></a><div class="content"><a class="title" href="/2025/05/06/%E8%A8%80%E8%AF%AD/" title="言语">言语</a><time datetime="2025-05-06T15:14:47.000Z" title="发表于 2025-05-06 23:14:47">2025-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/04/%E5%B8%B8%E8%AF%86-%E6%B3%95%E5%BE%8B-%E7%9B%91%E5%AF%9F%E6%B3%95/" title="常识-法律-监察法"><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202504210834163.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="常识-法律-监察法"/></a><div class="content"><a class="title" href="/2025/05/04/%E5%B8%B8%E8%AF%86-%E6%B3%95%E5%BE%8B-%E7%9B%91%E5%AF%9F%E6%B3%95/" title="常识-法律-监察法">常识-法律-监察法</a><time datetime="2025-05-04T14:35:02.000Z" title="发表于 2025-05-04 22:35:02">2025-05-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/03/%E5%B8%B8%E8%AF%86-%E6%B3%95%E5%BE%8B-%E5%85%B6%E4%BB%96%E6%B3%95/" title="常识-法律-其他法"><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202504210834163.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="常识-法律-其他法"/></a><div class="content"><a class="title" href="/2025/05/03/%E5%B8%B8%E8%AF%86-%E6%B3%95%E5%BE%8B-%E5%85%B6%E4%BB%96%E6%B3%95/" title="常识-法律-其他法">常识-法律-其他法</a><time datetime="2025-05-03T14:48:12.000Z" title="发表于 2025-05-03 22:48:12">2025-05-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/02/%E5%B8%B8%E8%AF%86-%E6%B3%95%E5%BE%8B-%E8%A1%8C%E6%94%BF%E6%B3%95&amp;%E5%88%91%E6%B3%95&amp;%E6%B0%91%E6%B3%95%E5%85%B8/" title="常识-法律-行政法&amp;刑法&amp;民法典"><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202504210834163.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="常识-法律-行政法&amp;刑法&amp;民法典"/></a><div class="content"><a class="title" href="/2025/05/02/%E5%B8%B8%E8%AF%86-%E6%B3%95%E5%BE%8B-%E8%A1%8C%E6%94%BF%E6%B3%95&amp;%E5%88%91%E6%B3%95&amp;%E6%B0%91%E6%B3%95%E5%85%B8/" title="常识-法律-行政法&amp;刑法&amp;民法典">常识-法律-行政法&amp;刑法&amp;民法典</a><time datetime="2025-05-02T13:48:58.000Z" title="发表于 2025-05-02 21:48:58">2025-05-02</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%A4%E6%96%AD-%E9%80%BB%E8%BE%91%E5%88%A4%E6%96%AD-%E7%BF%BB%E8%AF%91%E6%8E%A8%E7%90%86/"><span class="card-category-list-name">判断-逻辑判断-翻译推理</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B8%B8%E8%AF%86-%E6%B3%95%E5%BE%8B/"><span class="card-category-list-name">常识-法律</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%B3%E8%AE%BA-%E7%99%BD%E9%B9%AD/"><span class="card-category-list-name">申论-白鹭</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%94%B3%E8%AE%BA%E2%80%94%E2%80%94FB%E6%99%A8%E8%AF%BB/"><span class="card-category-list-name">申论——FB晨读</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%A8%80%E8%AF%AD-%E5%88%B7%E9%A2%98/"><span class="card-category-list-name">言语-刷题</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%A8%80%E8%AF%AD-%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">言语-笔记</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%99%A8%E8%AF%BB/" style="font-size: 1.25em; color: rgb(148, 61, 88);">晨读</a><a href="/tags/%E8%A8%80%E8%AF%AD/" style="font-size: 1.45em; color: rgb(108, 50, 104);">言语</a><a href="/tags/%E5%88%A4%E6%96%AD/" style="font-size: 1.15em; color: rgb(50, 171, 166);">判断</a><a href="/tags/%E7%94%B3%E8%AE%BA/" style="font-size: 1.25em; color: rgb(86, 150, 50);">申论</a><a href="/tags/%E5%B8%B8%E8%AF%86/" style="font-size: 1.35em; color: rgb(146, 50, 50);">常识</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">6</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">11</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">17</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">28.2k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-05-13T13:27:59.568Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/background.png);"><div id="footer-wrap"><div class="copyright">&copy;2025 By 小鱼在山东</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://butterfly.js.org/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
