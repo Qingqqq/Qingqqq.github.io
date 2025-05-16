@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>资料-基期量A</title>
+      <link href="/2025/05/16/%E8%B5%84%E6%96%99-%E5%9F%BA%E6%9C%9F%E9%87%8FA/"/>
+      <url>/2025/05/16/%E8%B5%84%E6%96%99-%E5%9F%BA%E6%9C%9F%E9%87%8FA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基期量A"><a href="#基期量A" class="headerlink" title="基期量A"></a>基期量A</h1><p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505162246029.png" alt="基期量A"></p><h3 id="同比环比"><a href="#同比环比" class="headerlink" title="同比环比"></a>同比环比</h3><p>同比看头</p><p>环比看尾</p><h3 id="基期公式"><a href="#基期公式" class="headerlink" title="基期公式"></a>基期公式</h3><ol><li>基期&#x3D;现期-增长量A&#x3D;B-X</li><li>基期&#x3D;增长量&#x2F;增长率A&#x3D;X&#x2F;R</li><li>基期&#x3D;现期&#x2F;（1+增长率）A&#x3D;B&#x2F;(1+R)</li></ol><h3 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h3><h4 id="基期计算"><a href="#基期计算" class="headerlink" title="基期计算"></a>基期计算</h4><ul><li><p>识别</p><ul><li>过去的量是多少</li></ul></li><li><p>给现期、变化量B、X</p><ul><li>高减低加</li><li>基期&#x3D;现期-增长量    A&#x3D;B-X</li><li>基期&#x3D;现期+减少量    A&#x3D;B+X</li></ul></li><li><p>给增长量、增长率X、R</p><ul><li>基期&#x3D;增长量&#x2F;增长率    A&#x3D;X&#x2F;R</li></ul></li><li><p>给现期、增长率B、R</p><ul><li><p>基期&#x3D;现期&#x2F;（1+增长率）    A&#x3D;B&#x2F;(1+R)</p><ul><li>假设分配</li><li>差距大，除两位</li><li>差距小，除三位，|r|≤5%，化除为乘<ul><li>r”+”    0＜r≤5%    直除更快</li><li>r”-“    -5%≤r＜0    化除为乘</li><li>当4%≤r≤5%    且    第二位都相同    只能直除</li></ul></li><li>差距极小（前两位相同），除四位</li></ul></li><li><p>基期和差&#x3D;A&#x2F;(1+A)±B&#x2F;(1+b)</p><ul><li>分母相同    观察选项，能瞪则瞪</li><li>分母不同<ul><li>不列式除（快准狠）</li><li>等比例修正，分母化同</li></ul></li><li>进出口额<ul><li>顺差&#x3D;出口-进口</li><li>逆差&#x3D;进口-出口</li></ul></li><li>大大小小，差距变小</li></ul><p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505162246078.png" alt="image-20250516203839138"></p></li><li><p>复杂类</p><ul><li>识别：存在总分结构，给比重</li><li>情况一：给所求主体增长率<ul><li>基期&#x3D;现期&#x2F;（1+增长率）    A&#x3D;B&#x2F;(1+R)</li><li>分子需转化<ul><li>部分&#x3D;总体*比重</li><li>总体&#x3D;部分&#x2F;比重</li></ul></li></ul></li><li>情况二：不给所求主体增长率<ul><li>部分基期&#x3D;总体基期*基期比重</li><li>总体基期&#x3D;部分基期&#x2F;基期比重</li></ul></li></ul></li></ul></li></ul><h4 id="基期比较"><a href="#基期比较" class="headerlink" title="基期比较"></a>基期比较</h4><ul><li>过去的量谁大谁小</li><li>给现期、变化量B、X<ul><li>高减低加</li><li>对比排除</li></ul></li><li>给现期、增长率B、R<ul><li>基期&#x3D;现期&#x2F;（1+增长率）    A&#x3D;B&#x2F;(1+R)</li><li>先分析<ul><li>现期大，增长率大，基期大</li><li>B大，R大，则A大</li></ul></li><li>再比较<ul><li>分数比较</li></ul></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 资料-笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 资料 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>资料-速算技巧</title>
+      <link href="/2025/05/16/%E8%B5%84%E6%96%99-%E9%80%9F%E7%AE%97%E6%8A%80%E5%B7%A7/"/>
+      <url>/2025/05/16/%E8%B5%84%E6%96%99-%E9%80%9F%E7%AE%97%E6%8A%80%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="做题技巧"><a href="#做题技巧" class="headerlink" title="做题技巧"></a>做题技巧</h1><h2 id="问题三步走"><a href="#问题三步走" class="headerlink" title="问题三步走"></a>问题三步走</h2><ul><li>圈时间</li><li>判题型</li><li>定主体</li></ul><p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505162244887.png" alt="速算技巧"></p><h2 id="加法"><a href="#加法" class="headerlink" title="加法"></a>加法</h2><h3 id="尾数法"><a href="#尾数法" class="headerlink" title="尾数法"></a>尾数法</h3><h3 id="高位叠加"><a href="#高位叠加" class="headerlink" title="高位叠加"></a>高位叠加</h3><p>​两加一估</p><h3 id="削峰填谷"><a href="#削峰填谷" class="headerlink" title="削峰填谷"></a>削峰填谷</h3><h2 id="减法"><a href="#减法" class="headerlink" title="减法"></a>减法</h2><h3 id="12、21分段法"><a href="#12、21分段法" class="headerlink" title="12、21分段法"></a>12、21分段法</h3><h3 id="整数基本值法"><a href="#整数基本值法" class="headerlink" title="整数基本值法"></a>整数基本值法</h3><h2 id="乘法"><a href="#乘法" class="headerlink" title="乘法"></a>乘法</h2><h3 id="高位乘法"><a href="#高位乘法" class="headerlink" title="高位乘法"></a>高位乘法</h3><p>​多位数 * 一位数</p><p>​高位乘起，最后叠加</p><h3 id="百化分、小分互换"><a href="#百化分、小分互换" class="headerlink" title="百化分、小分互换"></a>百化分、小分互换</h3><p><img src="https://cdn.jsdelivr.net/gh/Qingqqq/QPicGo@master/img/202505162244293.png" alt="image-20250514215122040"></p><h3 id="口诀法"><a href="#口诀法" class="headerlink" title="口诀法"></a>口诀法</h3><p>​前前后后，里里外外</p><h3 id="特殊数字"><a href="#特殊数字" class="headerlink" title="特殊数字"></a>特殊数字</h3><p>​1.5</p><p>​1.1</p><p>​0.9</p><h2 id="除法"><a href="#除法" class="headerlink" title="除法"></a>除法</h2><h3 id="分数拆分"><a href="#分数拆分" class="headerlink" title="分数拆分"></a>分数拆分</h3><p>​选项接近1，50%</p><h3 id="截位直除"><a href="#截位直除" class="headerlink" title="截位直除"></a>截位直除</h3><h4 id="一步除法"><a href="#一步除法" class="headerlink" title="一步除法"></a>一步除法</h4><p>​只截分母</p><h4 id="多步除法"><a href="#多步除法" class="headerlink" title="多步除法"></a>多步除法</h4><ul><li>分子分母都截<ul><li>差距大，截两位，可微调+1.-1<ul><li>＞10才可微调，尽量调1</li></ul></li><li>差距小，截三位，精确计算</li></ul></li></ul><h4 id="截几位"><a href="#截几位" class="headerlink" title="截几位"></a>截几位</h4><ul><li><p>选项差距大——截两位</p><ul><li>首位均不同</li><li>首位相同，第二位不同，第二位差＞首</li></ul></li><li><p>选项差距小——截三位</p><ul><li>首位相同，第二位差≤首</li></ul></li><li><p>选项差距极小——截四位</p><ul><li>首位相同，第二位也相同</li></ul></li></ul><h4 id="量级"><a href="#量级" class="headerlink" title="量级"></a>量级</h4><ul><li>%量级——包子法</li><li>数值量级<ol><li>截位    组与组之间差距</li><li>保留量级    组内关系，小数点位置</li></ol></li><li>注意<ul><li>隐含量级</li><li>‰</li></ul></li></ul><h3 id="等比例修正"><a href="#等比例修正" class="headerlink" title="等比例修正"></a>等比例修正</h3><p>溶液混合</p><p>估倍数，同加减</p><h3 id="分数比较"><a href="#分数比较" class="headerlink" title="分数比较"></a>分数比较</h3><ul><li>一大一下</li><li>同大同小<ul><li>竖除</li><li>横比<ul><li>分子倍数大，则大</li><li>分母倍数大，则小</li></ul></li></ul></li><li>注意<ul><li>找最大<ul><li>找分母最小或分子最大的为基准</li></ul></li><li>先同量级，再比较</li><li>若题干给数据为    分母&#x2F;分子    ，则直接算    分母&#x2F;分子    ，求大找小</li></ul></li></ul><h3 id="假设分配"><a href="#假设分配" class="headerlink" title="假设分配"></a>假设分配</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 资料-笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 资料 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>小记-25.5.16</title>
       <link href="/2025/05/16/%E5%B0%8F%E8%AE%B0-25-5-16/"/>
       <url>/2025/05/16/%E5%B0%8F%E8%AE%B0-25-5-16/</url>
